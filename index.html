@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infocripto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="script.js"></script>
+</head>
+<body onload="get_trendings()">
+    <header class="header">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="#">
+                <img src="./assets/imgs/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Infocripto
+            </a>
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#main-section">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#search">Buscar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#trendings">Tendencias</a>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <section class="align-middle" id="main-section">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <figure>
+                    <img src="./assets/imgs/coins-img.png" alt="">
+                </figure>
+            </div>
+            <h1>Cotización</h1>
+            <div class="input-group m-2" id="search">
+                <input type="text" class="form-control"  id="search_name" placeholder="Cotiza tu criptomoneda ahora!" aria-label="" aria-describedby="basic-addon1">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" onclick ="search_coin()">Buscar</button>
+                </div>
+            </div>
+            <div>
+                <table class="table" id="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Moneda</th>
+                        <th>Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody id="currency-info">
+                    </tbody>
+                  </table>
+            </div> 
+        </div>   
+    </section>
+    <section class="align-middle p-5" id="trendings">
+        <div class="container">
+            <h1>Tendencias</h1>
+            <ul class="list-group" id="trendings_list"></ul>
+        </div>
+    </section>
+
+    <footer class="align-middle bg-primary text-white"">
+      <div class="p-3">
+        <p>© Infocripto 2021</p>
+      </div>
+    </footer> 
+</body>
+</html>
