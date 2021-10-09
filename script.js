@@ -1,11 +1,11 @@
-let api_info = {
+const api_info = {
     url : 'https://api.coingecko.com/api/v3/',
     coins_str : 'coins/',
     search_str : 'search/trending',
     coin_name : ''
 }
 
-let get_trendings = async() =>{
+const get_trendings = async() =>{
     try{
         let response = await fetch( `${api_info.url + api_info.search_str}`)
         let data = await response.json()
@@ -26,7 +26,7 @@ let get_trendings = async() =>{
 }
 
 
-let search_coin = () => {
+const search_coin = () => {
     let table = document.querySelector('#table')
     table.style.visibility = 'visible'
     let coin_name = document.querySelector('#search_name').value 
@@ -34,7 +34,7 @@ let search_coin = () => {
     api_call()
 }
 
-let api_call = async() => {
+const api_call = async() => {
     try{
         let response = await fetch( `${api_info.url + api_info.coins_str + api_info.coin_name}`)
         let data = await response.json()
@@ -46,7 +46,7 @@ let api_call = async() => {
     }
 }
 
-let charge_data = (currency) => {
+const charge_data = (currency) => {
     let currency_name, currency_price, i
     i = 0
     for (let x in currency){ 
@@ -58,7 +58,7 @@ let charge_data = (currency) => {
     
 }
 
-let append_data = (curr_name, curr_price, i) => {
+const append_data = (curr_name, curr_price, i) => {
     let tbody = document.querySelector('#currency-info')
     let row = document.createElement('tr')
     let num = document.createElement('th')
